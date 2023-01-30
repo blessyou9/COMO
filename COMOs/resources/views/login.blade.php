@@ -27,7 +27,7 @@
 
             <div class="card" style="width: 18rem;">
     
-                <form action="inicio" method="GET">
+                <form action="producto" method="GET">
                     <!--Es para qque el server acepte el form-->
                     @CSRF
                     <div >
