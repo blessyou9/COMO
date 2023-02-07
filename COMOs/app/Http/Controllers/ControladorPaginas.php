@@ -5,12 +5,12 @@ use Illuminate\Http\Request;
 
 class ControladorPaginas extends Controller
 {
-    public function _invoke(){
+    public function flogin(){
         return view("login");
     }
 
-    function fInicio(){
-        return view ('inicio');
+    function fProducto(){
+        return view ('producto');
     }
 
     function fcontact(){
