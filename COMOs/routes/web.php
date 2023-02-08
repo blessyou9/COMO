@@ -1,11 +1,24 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ControladorPaginas;
+use App\Http\Controllers\ProductController;
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
+|
+*/
+
+Route::get('/', function () {
+    return view('welcome');
+});
 
 
-Route ::get('/',[ControladorPaginas::class,'flogin'])->name('Nlogin');
-Route ::get('/producto',[ControladorPaginas::class,'fProducto'])->name('NProducto');
-#Route::get('/contact', [ControladorPaginas::class,'fContact'])->name('NContact');
-#Route::post('/contact_post', [ControladorPaginas::class,'contact_post']);
+Route::resource('products', ProductController::class);
+Auth::routes();
 
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
